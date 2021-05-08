@@ -16,8 +16,8 @@ int main() {
     */
   string  unidades[20]= { "cero","uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve","diez",
                           "once","doce","trece","catorce","quince","dieciseis","diecisiete","dieciocho","diecinueve"},
-          decenas[9]=   { "","veinte","treinta","cuarenta","cincuenta","sesenta","setenta","ochenta","noventa"},
-          centenas[10]= { "ciento","doscientos","trescientos","cuatroscientos","quinientos","seiscientos",
+          decenas[9]=   { " ","veinte","treinta","cuarenta","cincuenta","sesenta","setenta","ochenta","noventa"},
+          centenas[10]= { " ","ciento","doscientos","trescientos","cuatroscientos","quinientos","seiscientos",
                           "setecientos","ochocientos","novecientos"};
 
     /*  variable  "numero" contendrá el valor a convertir en letras
@@ -35,9 +35,9 @@ int main() {
   inddecenas  = numero/10%10;
   indcentenas = numero/100%10;
 
-  cout  <<  indunidades << endl;  //  Se usará como índice del vector "unidades"
-  cout  <<  inddecenas << endl;   //  Se usará como índice del vector "decenas"
-  cout  <<  indcentenas << endl;  //  Se usará como índice del vector "centenas"
+  //  cout  <<  indunidades << endl;  //  Se usará como índice del vector "unidades"
+  //  cout  <<  inddecenas << endl;   //  Se usará como índice del vector "decenas"
+  //  cout  <<  indcentenas << endl;  //  Se usará como índice del vector "centenas"
 
   if(numero < 20){
     cout  <<  unidades[numero];   //  Despliegue si el número es de los primeros veinte
@@ -49,8 +49,8 @@ int main() {
     return 0;
   }
 
-  if(indcentenas  !=  0){
-    cout  <<  centenas[--indcentenas];
+  if(indcentenas  >  0){
+    cout  <<  centenas[indcentenas];
   }
 
   if(inddecenas ==  0 &&  indunidades ==  0){
@@ -61,7 +61,18 @@ int main() {
     cout  <<  " " <<  unidades[inddecenas*10+indunidades];
     return 0;
   }
-  cout  <<  " "  <<  decenas[--inddecenas] <<  " y " <<  unidades[indunidades];
-  //cout  <<  centenas[--indcentenas] <<  " " <<  decenas[--inddecenas] <<  " y "<< unidades[indunidades];
+
+  if(indunidades  !=  0){
+    cout  <<  " "  <<  decenas[--inddecenas] <<  " y " <<  unidades[indunidades];
+    return 0;
+  }
+  /////////////////////////////////
+  if(indcentenas  ==  0){
+    cout  <<  decenas[--inddecenas];
+    return 0;
+  }
+  cout  <<  " " <<  decenas[--inddecenas];
   return 0;
+  //cout  <<  centenas[--indcentenas] <<  " " <<  decenas[--inddecenas] <<  " y "<< unidades[indunidades];
+  
 }
