@@ -29,7 +29,7 @@ int main() {
   cout << "ingrese un numero entre 0 y 999\n";
   cin >> numero;
 
-    /*  descopmposición de variable "numero" en: unidades, decenas y centenas. */
+    /*  descomposición de variable "numero" en: unidades, decenas y centenas. */
   
   indunidades = numero%10;
   inddecenas  = numero/10%10;
@@ -40,7 +40,7 @@ int main() {
   cout  <<  indcentenas << endl;  //  Se usará como índice del vector "centenas"
 
   if(numero < 20){
-    cout  <<  unidades[numero];
+    cout  <<  unidades[numero];   //  Despliegue si el número es de los primeros veinte
     return 0;
   }
 
@@ -49,19 +49,19 @@ int main() {
     return 0;
   }
 
-if(indcentenas  !=  0){
-  cout  <<  centenas[--indcentenas];
-}
+  if(indcentenas  !=  0){
+    cout  <<  centenas[--indcentenas];
+  }
 
-if(inddecenas !=  0){
-  cout  <<  " " <<  decenas[--inddecenas];
-}
+  if(inddecenas ==  0 &&  indunidades ==  0){
+    return 0;
+  }
 
-if(indunidades  !=  0){
-  cout  <<  " " <<  unidades[indunidades];
-}
-
-//cout  <<  centenas[--indcentenas] <<  " " <<  decenas[--inddecenas] <<  " y "<< unidades[indunidades];
-
-return 0;
+  if(inddecenas ==  1){
+    cout  <<  " " <<  unidades[inddecenas*10+indunidades];
+    return 0;
+  }
+  cout  <<  " "  <<  decenas[--inddecenas] <<  " y " <<  unidades[indunidades];
+  //cout  <<  centenas[--indcentenas] <<  " " <<  decenas[--inddecenas] <<  " y "<< unidades[indunidades];
+  return 0;
 }
