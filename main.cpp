@@ -49,29 +49,114 @@ int main() {
     return 0;
   }
 
-  if(indcentenas  >  0){
+  if(indcentenas  > 0 ){
     cout  <<  centenas[indcentenas];
+    if(inddecenas > 1 ){
+      cout  <<  " " <<  decenas[--inddecenas];
+    }
+    else{
+      cout  <<  " " <<  unidades[inddecenas*10+indunidades];
+      return 0;
+    }    
+    if(inddecenas ==  0 ){
+      if(indunidades  ==  0){
+        return 0;
+      }
+      cout  <<  " " <<  unidades[indunidades];
+      return 0;
+    }
+    cout  <<  " y " <<  unidades[indunidades];
+    return 0;
   }
 
+  if(inddecenas > 1 ){
+    cout  <<  decenas[--inddecenas];
+  }
+  if(indunidades == 0){
+    return 0;
+  }
+  cout  <<  " y " <<  unidades[indunidades];
+  return 0;
+  
+
+
+
+
+
+
+
+/*
+
+    if(indunidades != 0 ){
+      cout  <<  " " <<  unidades[indunidades];
+      return 0;
+    }
+  }
+
+  
+  
+  
+  if(inddecenas > 1 ){
+      cout  <<  decenas[--inddecenas];
+    }
+    if(indunidades != 0 ){
+      cout  <<  " " <<  unidades[indunidades];
+      return 0;
+    }
+  
+*/
+
+
+
+/*
   if(inddecenas ==  0 &&  indunidades ==  0){
     return 0;
   }
 
+  if(indcentenas  ==  0 ){
+    if(inddecenas > 1 ){
+      cout  << decenas[--inddecenas];
+
+    }
+    if(inddecenas < 2 ){
+      cout  <<  unidades[indunidades];
+      return 0;
+    }
+    cout  <<  decenas[--inddecenas];
+    if(indunidades  !=  0){
+      cout  <<  "y" <<  unidades[indunidades];
+    }
+
+  }
+*/
+
+
+
+
+
+/*
   if(inddecenas ==  1){
     cout  <<  " " <<  unidades[inddecenas*10+indunidades];
     return 0;
   }
 
   if(indunidades  !=  0){
-    cout  <<  " "  <<  decenas[--inddecenas] <<  " y " <<  unidades[indunidades];
+    if(indcentenas  > 0){
+      cout  <<  " "  <<  decenas[--inddecenas] <<  " y " <<  unidades[indunidades];
+      return 0;
+    }
+    cout  <<  decenas[--inddecenas] <<  " y " <<  unidades[indunidades];
     return 0;
   }
-  /////////////////////////////////
+
   if(indcentenas  ==  0){
     cout  <<  decenas[--inddecenas];
     return 0;
   }
   cout  <<  " " <<  decenas[--inddecenas];
+
+  */
+
   return 0;
   //cout  <<  centenas[--indcentenas] <<  " " <<  decenas[--inddecenas] <<  " y "<< unidades[indunidades];
   
