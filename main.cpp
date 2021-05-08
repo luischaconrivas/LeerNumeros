@@ -16,13 +16,13 @@ int main() {
     */
   string  unidades[20]= { "cero","uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve","diez",
                           "once","doce","trece","catorce","quince","dieciseis","diecisiete","dieciocho","diecinueve"},
-          decenas[8]=   { "veinte","treinta","cuarenta","cincuenta","sesenta","setenta","ochenta","noventa"}
+          decenas[8]=   { "veinte","treinta","cuarenta","cincuenta","sesenta","setenta","ochenta","noventa"},
           centenas[10]= { "ciento","doscientos","trescientos","cuatroscientos","quinientos","seiscientos",
                           "setecientos","ochocientos","novecientos"};
 
-    /*  variable "numero" contendrá el valor a convertir en letras
-        variabe "indunidades* contendrá el subíndice del vecctor de unidades
-        variable "inddecenas" el del vector de decenas e "indcentenas" el de centenas */
+    /*  variable  "numero" contendrá el valor a convertir en letras
+        variable  "indunidades* contendrá el subíndice del vecctor de unidades
+        variable  "inddecenas" el del vector de decenas e "indcentenas" el de centenas */
     int   numero, indunidades, inddecenas,indcentenas;
 
         /*  Se le solicita al usuario el ingreso del valor */
@@ -30,6 +30,15 @@ int main() {
   cin >> numero;
 
     /*  descopmposición de variable "numero" en: unidades, decenas y centenas. */
+  
+  indunidades = numero%10;
+  inddecenas  = numero/10%10;
+  indcentenas = numero/100%10;
+
+  cout  <<  indunidades << endl;
+  cout  <<  inddecenas << endl;
+  cout  <<  indcentenas << endl;
+
 
 
 
