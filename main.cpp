@@ -16,7 +16,7 @@ int main() {
     */
   string  unidades[20]= { "cero","uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve","diez",
                           "once","doce","trece","catorce","quince","dieciseis","diecisiete","dieciocho","diecinueve"},
-          decenas[8]=   { "veinte","treinta","cuarenta","cincuenta","sesenta","setenta","ochenta","noventa"},
+          decenas[9]=   { "","veinte","treinta","cuarenta","cincuenta","sesenta","setenta","ochenta","noventa"},
           centenas[10]= { "ciento","doscientos","trescientos","cuatroscientos","quinientos","seiscientos",
                           "setecientos","ochocientos","novecientos"};
 
@@ -26,7 +26,7 @@ int main() {
     int   numero, indunidades, inddecenas,indcentenas;
 
         /*  Se le solicita al usuario el ingreso del valor */
-  cout << "ingrese un numero entre 0 y 999";
+  cout << "ingrese un numero entre 0 y 999\n";
   cin >> numero;
 
     /*  descopmposición de variable "numero" en: unidades, decenas y centenas. */
@@ -35,17 +35,33 @@ int main() {
   inddecenas  = numero/10%10;
   indcentenas = numero/100%10;
 
-  cout  <<  indunidades << endl;
-  cout  <<  inddecenas << endl;
-  cout  <<  indcentenas << endl;
+  cout  <<  indunidades << endl;  //  Se usará como índice del vector "unidades"
+  cout  <<  inddecenas << endl;   //  Se usará como índice del vector "decenas"
+  cout  <<  indcentenas << endl;  //  Se usará como índice del vector "centenas"
 
+  if(numero < 20){
+    cout  <<  unidades[numero];
+    return 0;
+  }
 
+  if(numero ==  100){
+    cout  <<  "cien";             //  La excepción del número 100
+    return 0;
+  }
 
+if(indcentenas  !=  0){
+  cout  <<  centenas[--indcentenas];
+}
 
+if(inddecenas !=  0){
+  cout  <<  " " <<  decenas[--inddecenas];
+}
 
+if(indunidades  !=  0){
+  cout  <<  " " <<  unidades[indunidades];
+}
 
+//cout  <<  centenas[--indcentenas] <<  " " <<  decenas[--inddecenas] <<  " y "<< unidades[indunidades];
 
-
-  cout << "Hello World!\n";
-  return 0;
+return 0;
 }
