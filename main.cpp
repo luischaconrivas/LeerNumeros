@@ -59,118 +59,44 @@ int main() {
     return 0;
   }
 
-  if(indcentenas  > 0 ){              //Si hay centenas, continuo con el despliegue de las decenas
+  if(indcentenas  > 0 ){              //Si hay centenas, las despliego
     cout  <<  centenas[indcentenas];
-    if(inddecenas > 1 ){              //Si las decenas son mayores a "20" las despliego como: "veinte", "treinta"..
-      cout  <<  " " <<  decenas[--inddecenas];      //Presento las decenas si están por encima de 20
-    }
-    else{
-      cout  <<  " " <<  unidades[inddecenas*10+indunidades];  //De no ser así, presento el número hasta "dicecinueve"
-      return 0;
-    }    
-    if(inddecenas ==  0 ){
-      if(indunidades  ==  0){
-        return 0;
+    if(inddecenas == 0  ){            //Eavlúo si habrá centenas que desplegar
+      if(indunidades  !=  0 ){        //No hay centenas ¿Quedarán unidades que desplegar?
+        cout  <<  " " <<  unidades[indunidades];
       }
-      cout  <<  " " <<  unidades[indunidades];       // De nuevo, puro formato: solo espacio en blanco + unidades
       return 0;
     }
-    else{
-      cout  <<  " y " <<  unidades[indunidades];       // De nuevo, puro formato: agrego las unidades a las decenas
+    if(inddecenas == 1  ){            //Confirmé que hay centenas por desplegar, quedan dos caminos:
+                                      //Si son las primeras dos decenas, uso el vector "unidades"
+      cout  <<  " " <<  unidades[inddecenas*10+indunidades];
       return 0;
+    }
+    cout  <<  " " <<  decenas[--inddecenas];    //De lo contrario (más arriba de 2 décimos) uso vector "decenas"
+    if(indunidades  !=  0 ){                    //Evalúo si quedan unidades por desplegar
+      cout  <<  " y " <<  unidades[indunidades];//De ser así, las despliego
+    }    
+    return 0;
+  }
+  
+  //No hay centenas, ¿Pero Habrá decenas que desplegar?
+
+  if(inddecenas > 0 ){                                //Evalúo la presencia de decenas en "numero"
+    if(inddecenas ==  1 ){                            //Sigo secuencia MUY similar a la anterior
+      cout  <<  unidades[inddecenas*10+indunidades];  
+      return 0;
+    }
+    cout  <<  decenas[--inddecenas];
+    if(indunidades  !=  0 ){
+      cout  <<  " y " <<  unidades[indunidades];
     }    
     return 0;
   }
 
-  if(inddecenas > 1 ){
-    cout  <<  decenas[--inddecenas];
+  //No hay decenas, ¿Pero habrá unidades que desplegar?
+
+  if(indunidades  != 0 ){                             //Finalizo con la evaluación de las unidades
+    cout  <<  unidades[indunidades];
   }
-  if(indunidades == 0){
-    return 0;
-  }
-  cout  <<  " y " <<  unidades[indunidades];
   return 0;
-  
-
-
-
-
-
-
-
-/*
-
-    if(indunidades != 0 ){
-      cout  <<  " " <<  unidades[indunidades];
-      return 0;
-    }
-  }
-
-  
-  
-  
-  if(inddecenas > 1 ){
-      cout  <<  decenas[--inddecenas];
-    }
-    if(indunidades != 0 ){
-      cout  <<  " " <<  unidades[indunidades];
-      return 0;
-    }
-  
-*/
-
-
-
-/*
-  if(inddecenas ==  0 &&  indunidades ==  0){
-    return 0;
-  }
-
-  if(indcentenas  ==  0 ){
-    if(inddecenas > 1 ){
-      cout  << decenas[--inddecenas];
-
-    }
-    if(inddecenas < 2 ){
-      cout  <<  unidades[indunidades];
-      return 0;
-    }
-    cout  <<  decenas[--inddecenas];
-    if(indunidades  !=  0){
-      cout  <<  "y" <<  unidades[indunidades];
-    }
-
-  }
-*/
-
-
-
-
-
-/*
-  if(inddecenas ==  1){
-    cout  <<  " " <<  unidades[inddecenas*10+indunidades];
-    return 0;
-  }
-
-  if(indunidades  !=  0){
-    if(indcentenas  > 0){
-      cout  <<  " "  <<  decenas[--inddecenas] <<  " y " <<  unidades[indunidades];
-      return 0;
-    }
-    cout  <<  decenas[--inddecenas] <<  " y " <<  unidades[indunidades];
-    return 0;
-  }
-
-  if(indcentenas  ==  0){
-    cout  <<  decenas[--inddecenas];
-    return 0;
-  }
-  cout  <<  " " <<  decenas[--inddecenas];
-
-  */
-
-  return 0;
-  //cout  <<  centenas[--indcentenas] <<  " " <<  decenas[--inddecenas] <<  " y "<< unidades[indunidades];
-  
 }
