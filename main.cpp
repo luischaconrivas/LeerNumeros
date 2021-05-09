@@ -26,7 +26,7 @@ int main() {
     int   numero, indunidades, inddecenas,indcentenas;
 
         /*  Se le solicita al usuario el ingreso del valor */
-  cout << "ingrese un numero entre 0 y 999\n";
+  cout << "ingrese un número entre 0 y 999\n";
   cin >> numero;
 
         /*  Verifico que el número esté en el rango apropiados  */
